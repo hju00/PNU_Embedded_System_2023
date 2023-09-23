@@ -52,47 +52,47 @@ int main(void)
   int flag4 = 0;
 
  while (1) // 계속 반복
-  {
-    if (~GPIOC_IDR & 0x00000010) { // Key1의 버튼이 눌렸는지 확인. (IDR은 눌렸으면 0,  뗐으면 1)
-      if (flag1 == 0) {
-        GPIOD_BRR |= (1<<2); // LED 켜기
-        flag1 = 1;
-      }
-      else if (flag1 == 1) {
-        GPIOD_BSRR |= (1<<2); // LED 끄기
-        flag1 = 0;
-      }
+    {
+        if (~GPIOC_IDR & 0x00000010) { // Key1의 버튼이 눌렸는지 확인. (IDR은 눌렸으면 0,  뗐으면 1)
+            if (flag1 == 0) {
+                GPIOD_BRR |= (1 << 2); // LED 켜기 (reset)
+                flag1 = 1;
+            }
+            else if (flag1 == 1) {
+                GPIOD_BSRR |= (1 << 2); // LED 끄기 (set)
+                flag1 = 0;
+            }
+        }
+        if (~GPIOB_IDR & 0x400) {
+            if (flag2 == 0) {
+                GPIOD_BRR |= (1 << 3);
+                flag2 = 1;
+            }
+            else if (flag2 == 1) {
+                GPIOD_BSRR |= (1 << 3);
+                flag2 = 0;
+            }
+        }
+        if (~GPIOC_IDR & 0x2000) {
+            if (flag3 == 0) {
+                GPIOD_BRR |= (1 << 4);
+                flag3 = 1;
+            }
+            else if (flag3 == 1) {
+                GPIOD_BSRR |= (1 << 4);
+                flag3 = 0;
+            }
+        }
+        if (~GPIOA_IDR & 0x1) {
+            if (flag4 == 0) {
+                GPIOD_BRR |= (1 << 7);
+                flag4 = 1;
+            }
+            else if (flag4 == 1) {
+                GPIOD_BSRR |= (1 << 7);
+                flag4 = 0;
+            }
+
+        }
     }
-    if (~GPIOB_IDR & 0x400) {
-      if (flag2 == 0) {
-        GPIOD_BRR |= (1 << 3);
-        flag2 = 1;
-      }
-      else if (flag2 == 1) {
-        GPIOD_BSRR |= (1 << 3);
-        flag2 = 0;
-      }
-    }
-    if (~GPIOC_IDR & 0x2000) {
-      if (flag2 == 0) {
-        GPIOD_BRR |= (1 << 4);
-        flag2 = 1;
-      }
-      else if (flag2 == 1) {
-        GPIOD_BSRR |= (1 << 4);
-        flag2 = 0;
-      }
-    }
-    if (~GPIOA_IDR & 0x1) {
-      if (flag2 == 0) {
-        GPIOD_BRR |= (1 << 7);
-        flag2 = 1;
-      }
-      else if (flag2 == 1) {
-        GPIOD_BSRR |= (1 << 7);
-        flag2 = 0;
-      }
-      
-    }
-  }
 }
