@@ -6,7 +6,7 @@ C language + IAR Embedded Workbench
 STM32F107 보드를 이용하여 만든 도망가는 알람 시계 입니다.
 <br>
 
-## 🕰️개발 기간
+## 🕰️ 개발 기간
 * 23.12.05 - 23.12.22
 
 ### 🧑‍🤝‍🧑 개발 멤버
@@ -19,3 +19,7 @@ STM32F107 보드를 이용하여 만든 도망가는 알람 시계 입니다.
 - `C language`
 - **IDE** : IAR Embedded Workbench for Arm
 - **DEVICE** : ST STM32F107VC
+
+### 🖼️ 결과 사진
+![KakaoTalk_20240110_202919932](https://github.com/hju00/PNU_Embedded_System_2023/assets/113781201/7163cdf9-1ac5-44f3-9baa-d16f720f6d8a)
+![KakaoTalk_20240110_202919932_01](https://github.com/hju00/PNU_Embedded_System_2023/assets/113781201/d2182a73-7af0-4b1b-b68d-da735563b833)
